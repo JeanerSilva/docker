@@ -1,6 +1,6 @@
-FROM node:14.14.0-alpine
+FROM node:14.18-alpine
 WORKDIR /app
 COPY ./package.json ./
-RUN npm i
+RUN yarn install --ignore-engines --force
 COPY . .
-CMD ["npm", "run", "start"]
+CMD ["yarn", "start"]

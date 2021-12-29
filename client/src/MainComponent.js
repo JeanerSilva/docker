@@ -4,11 +4,11 @@ import "./MainComponent.css";
 
 const MainComponent = () => {
   const [values, setValues] = useState([]);
-  const [value, setValue] = useState("");
+  const [value,  setValue]  = useState("");
 
   const getAllNumbers = useCallback(async () => {
     // we will use nginx to redirect it to the proper URL
-    const data = await axios.get("/api/values/all");
+    const data = await axios.get("/api/valores/all");
     setValues(data.data.rows.map(row => row.number));
   }, []);
 
@@ -16,7 +16,7 @@ const MainComponent = () => {
     async event => {
       event.preventDefault();
 
-      await axios.post("/api/values", {
+      await axios.post("/api/valores", {
         value
       });
 
@@ -32,7 +32,7 @@ const MainComponent = () => {
 
   return (
     <div>
-      <button onClick={getAllNumbers}>Get all numbers</button>
+      <button onClick={getAllNumbers}> Busca </button>
       <br />
       <span className="title">Values</span>
       <div className="values">

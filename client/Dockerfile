@@ -1,9 +1,9 @@
-FROM node:14.14.0-alpine as builder
+FROM node:14.18-alpine as builder
 WORKDIR /app
 COPY ./package.json ./
-RUN npm i
+RUN yarn install --ignore-engines --force
 COPY . .
-RUN npm run build
+RUN yarn build
 
 FROM nginx
 EXPOSE 3000
