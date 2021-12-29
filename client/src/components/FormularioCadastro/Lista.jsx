@@ -22,7 +22,7 @@ function Lista( { url } ) {
   return (
     <>
       <Typography variant="h3" component="h1" align="center">
-        Lista teste 2
+        Lista main
       </Typography>
 
       <form
